@@ -10,3 +10,11 @@
     margin: 0 auto;
     /* background-color: blue; */
 }
+
+.color-icon {
+    height: 30px;
+    width: 30px;
+    background-color: var(--clr1);
+    border-radius: 6px;
+    padding: 5px;
+}

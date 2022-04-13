@@ -4,13 +4,13 @@
 let gImgs = [
     createImg(1, 'img/1.jpg', ['funny', 'politics']),
     createImg(2, 'img/2.jpg', ['funny', 'dogs']),
-    // createImg(3, 'img/3.jpg', ['babies', 'dogs']),
-    // createImg(4, 'img/4.jpg', ['funny', 'cats']),
-    // createImg(5, 'img/5.jpg', ['babies', 'funny']),
-    // createImg(6, 'img/6.jpg', ['crazy']),
-    // createImg(7, 'img/7.jpg', ['babies', 'shock']),
-    // createImg(8, 'img/8.jpg', ['funny', 'happy']),
-    // createImg(9, 'img/9.jpg', ['babies', 'laugh'])
+    createImg(3, 'img/3.jpg', ['babies', 'dogs']),
+    createImg(4, 'img/4.jpg', ['funny', 'cats']),
+    createImg(5, 'img/5.jpg', ['babies', 'funny']),
+    createImg(6, 'img/6.jpg', ['crazy']),
+    createImg(7, 'img/7.jpg', ['babies', 'shock']),
+    createImg(8, 'img/8.jpg', ['funny', 'happy']),
+    createImg(9, 'img/9.jpg', ['babies', 'laugh'])
 ]
 
 let gMeme = {
@@ -21,7 +21,7 @@ let gMeme = {
             txt: 'Destiny is all',
             size: 20,
             align: 'left',
-            color: 'red'
+            color: 'white'
         }
     ]
 }
@@ -44,6 +44,11 @@ function setLineTxt(txt) {
 //after clicking an img - set the id of it in the model
 function setImg(imgId) {
     gMeme.selectedImgId = imgId
+}
+
+//after picking a color by the user - update the model color
+function setColor(val) {
+    gMeme.lines[gMeme.selectedLineIdx].color = val
 }
 
 //create img - returns object
