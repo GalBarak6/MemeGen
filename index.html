@@ -62,8 +62,21 @@
     <section class="canvas-container">
         <canvas id="" class="my-canvas" width="300" height="300"></canvas>
         <input type="text" id="txt" name="user-text" placeholder="Input your text.." oninput="onSetLineTxt(this.value)">
-        <label for="pick-color"><img src="img/icons/paint-board-and-brush.png" alt="" class="color-icon"></label>
+
+        <label for="pick-color">
+            <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
+        </label>
         <input type="color" id="pick-color" name="pick-color" hidden oninput="onSetColor(this.value)">
+
+        <label for="font-size">
+            <img src="img/icons/increase font - icon.png" alt="" class="canvas-icon font"
+                onmousedown="onSetFontSize('+')">
+            <img src="img/icons/decrease font - icon.png" alt="" class="canvas-icon font"
+                onmousedown="onSetFontSize('-')">
+        </label>
+        <input type="number" id="font-size" name="font-size" hidden>
+
+        <button class="canvas-icon line"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
     </section>
 
     <footer class="main-footer flex flex-column justify-center align-center">

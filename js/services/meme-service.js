@@ -22,6 +22,12 @@ let gMeme = {
             size: 20,
             align: 'left',
             color: 'white'
+        },
+        {
+            txt: 'Destiny is all',
+            size: 20,
+            align: 'right',
+            color: 'white'
         }
     ]
 }
@@ -49,6 +55,10 @@ function setImg(imgId) {
 //after picking a color by the user - update the model color
 function setColor(val) {
     gMeme.lines[gMeme.selectedLineIdx].color = val
+}
+
+function setFontSize(indicator) {
+    gMeme.lines[gMeme.selectedLineIdx].size += indicator
 }
 
 //create img - returns object
