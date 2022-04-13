@@ -1,0 +1,22 @@
+/* SETUP */
+
+@import 'setup/typography.css';
+@import 'setup/vars.css';
+
+
+
+/* BASE */
+
+@import 'basic/base.css';
+@import 'basic/helpers.css';
+@import 'basic/layouts.css';
+
+/* COMPONENTS */
+
+@import 'components/main-header.css';
+@import 'components/gallery.css';
+@import 'components/about.css';
+@import 'components/canvas.css';
+@import 'components/footer.css';
+
+

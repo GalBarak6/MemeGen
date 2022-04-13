@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint2</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="onInit()">
+    <header class="main-header">
+        <div class="header-container main-layout flex justify-between align-center">
+            <div class="logo">
+                <h2>memegen</h2>
+            </div>
+            <nav class="main-nav-container">
+                <ul class="main-nav clean-list flex">
+                    <li><a href="#">Gallery</a></li>
+                    <span class="separator">|</span>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-layout main-content">
+        <div class="gallery-container">
+            <div class="grid-container grid">
+                <img src="img/1.jpg" alt="" class="gallery-image img-01" id="1">
+                <img src="img/2.jpg" alt="" class="gallery-image img-02" id="2">
+                <img src="img/3.jpg" alt="" class="gallery-image img-03" id="3">
+                <img src="img/4.jpg" alt="" class="gallery-image img-04" id="4">
+                <img src="img/5.jpg" alt="" class="gallery-image img-05" id="5">
+                <img src="img/6.jpg" alt="" class="gallery-image img-06" id="6">
+                <img src="img/7.jpg" alt="" class="gallery-image img-07" id="7">
+                <img src="img/8.jpg" alt="" class="gallery-image img-08" id="8">
+                <img src="img/9.jpg" alt="" class="gallery-image img-09" id="9">
+            </div>
+        </div>
+    </main>
+
+
+    <section class="about">
+        <div class="about-container  flex justify-center align-center">
+            <img src="img/about.png" alt="" class="about-image">
+            <div class="about-content">
+                <h2 class="about-title">Monica Geller</h2>
+                <p class="about-text">is a fictional character, one of the six main characters who appears on the
+                    American sitcom Friends
+                    (1994-2004).Created by David Crane and Marta Kauffman
+                </p>
+                <button>linkin</button>
+                <button>facebook</button>
+                <button>github</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="canvas-container">
+        <canvas id="" class="my-canvas" width="300" height="300"></canvas>
+        <input type="text" id="txt" name="user-text" placeholder="Input your text.." oninput="onSetLineTxt(this.value)">
+    </section>
+
+    <footer class="main-footer flex flex-column justify-center align-center">
+        <div class="logo">
+            <h2>memegen</h2>
+        </div>
+        <small class="copyright">all rights reserved 2019</small>
+    </footer>
+
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
+</body>
+
+</html>

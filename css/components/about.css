@@ -1,0 +1,22 @@
+.about-container {
+    height: 387px;
+    gap: 20px;
+}
+
+.about-image {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-content .about-title {
+    font-family: Montserrat-Bold;
+    color: var(--clr6);
+}
+
+.about-content .about-text {
+    color: var(--clr6);
+    width: 400px;
+    font-size: 14px;
+}

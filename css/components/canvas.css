@@ -1,0 +1,12 @@
+.canvas-container {
+    background-color: var(--clr4);
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.my-canvas {
+    display: block;
+    margin: 0 auto;
+    /* background-color: blue; */
+}

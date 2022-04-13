@@ -1,0 +1,13 @@
+.main-footer {
+    background-color: var(--clr2);
+    height: 120px;
+}
+
+.main-footer .logo {
+    font-family: Changa One;
+    color: rgb(255, 255, 255);
+}
+
+.main-footer .copyright{
+    font-family: Montserrat-Thin;
+}
