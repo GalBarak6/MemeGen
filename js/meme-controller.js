@@ -8,7 +8,8 @@ function onInit() {
     gElCanvas = document.querySelector('.my-canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    renderMeme()
+    renderGallery()
+    // renderMeme()
 }
 
 function renderMeme() {
