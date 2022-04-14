@@ -19,4 +19,8 @@
 @import 'components/canvas.css';
 @import 'components/footer.css';
 
+/* MQ */
+
+@import 'mq/mq.css';
+
 

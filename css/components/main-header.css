@@ -4,11 +4,11 @@
 }
 
 .header-container .main-nav a {
-    height: 70px;
-    width: 70px;
+    height: 45px;
+    width: 45px;
     cursor: pointer;
     transition: box-shadow .1s;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 .header-container .main-nav a:hover {
@@ -23,5 +23,6 @@
 }
 
 .header-container .separator {
-    color: var(--clr4);
+    color: var(--clr2);
+    font-size: 10px;
 }

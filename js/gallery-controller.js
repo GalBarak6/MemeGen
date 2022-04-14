@@ -1,7 +1,6 @@
 'use strict'
 
 
-
 function renderGallery() {
     const imgs = getImgs()
     const strHTMLS = imgs.map(img => {
@@ -22,4 +21,10 @@ function onBackToGallery() {
     document.querySelector('.main-content').hidden = false
     document.querySelector('.about').hidden = false
     document.querySelector('.canvas').hidden = true
+}
+
+function toggleMenu() {
+    document.body.classList.toggle('nav-open')
+    if (document.body.classList.contains('nav-open')) document.querySelector('.toggle-nav-btn').innerText = 'X'
+    else document.querySelector('.toggle-nav-btn').innerText = '☰'
 }

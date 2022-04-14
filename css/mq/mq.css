@@ -1,0 +1,137 @@
+/* MOBILE ONLY */
+
+@media (max-width: 640px) {
+    .main-header {
+        position: fixed;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .header-container .main-nav {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--clr2);
+        justify-content: flex-end;
+
+        transition: max-height 0.5s;
+    }
+
+    body.nav-open .main-header .main-nav {
+        max-height: 100vh;
+    }
+
+    .main-header .main-nav a {
+        width: 100%;
+    }
+
+    .toggle-nav-btn {
+        color: var(--clr11);
+        cursor: pointer;
+    }
+}
+
+
+
+/* SMALL */
+
+@media (min-width: 640px) {
+    .header-layout {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .header-container .main-nav a {
+        height: 55px;
+        width: 55px;
+        font-size: 12px;
+    }
+
+    .header-container .separator {
+        color: var(--clr4);
+    }
+
+    .main-layout {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+
+    .main-content .grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 11px;
+    }
+
+    .about-container {
+        flex-direction: row;
+    }
+
+    .canvas-container {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .my-canvas {
+        height: 500px;
+        width: 500px;
+    }
+
+    .features-container {
+        align-self: flex-start;
+        padding-top: 55px;
+        gap: 10px;
+    }
+
+    #txt {
+        width: 11em;
+        height: 5em;
+    }
+
+    .toggle-nav-btn {
+        display: none;
+    }
+}
+
+
+/* LARGE */
+
+@media (min-width: 1020px) {
+
+    .header-layout {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .main-layout {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 13.5px;
+        padding-bottom: 13.5px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .header-container .main-nav a {
+        height: 70px;
+        width: 70px;
+        font-size: 14px;
+    }
+
+    .header-container .separator {
+        font-size: 14px;
+    }
+
+    #txt {
+        width: 30em;
+        height: 3em;
+    }
+}

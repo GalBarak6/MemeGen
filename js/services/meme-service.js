@@ -24,9 +24,9 @@ let gMeme = {
             color: 'white',
         },
         {
-            txt: 'What is the difference?!',
+            txt: 'NEITHER',
             size: 40,
-            align: 'center',
+            align: 'left',
             color: 'white',
         }
     ]
@@ -64,6 +64,7 @@ function setFontSize(indicator) {
 function switchLine() {
     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
     else gMeme.selectedLineIdx = 0
+    console.log(gMeme.selectedLineIdx);
 }
 
 //create img - returns object

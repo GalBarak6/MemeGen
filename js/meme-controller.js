@@ -30,7 +30,7 @@ function drawImg(id, clr, size, align, txt) {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
         drawText(txt, clr, size, align, 150, 50)
         
-        drawRect(1, 1)
+        // drawRect(1, 1)
     }
 }
 
@@ -65,7 +65,8 @@ function onSetFontSize(symbol) {
 
 
 function onSwitchLine() {
-    // renderMeme()
+    switchLine()
+    renderMeme()
 }
 
 
@@ -76,7 +77,7 @@ function drawRect(x, y) {
     gCtx.stroke()
 }
 
-function onClear(val) {
+function onClear() {
     const meme = getMeme()
     meme.lines[meme.selectedLineIdx].txt = ''
     document.querySelector('[name=user-text]').value = ''

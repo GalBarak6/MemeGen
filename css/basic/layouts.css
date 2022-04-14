@@ -1,13 +1,13 @@
 .header-layout {
     margin: 0 auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .main-layout {
     margin: 0 auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 13.5px;
-    padding-bottom: 13.5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 50px;
+    padding-bottom: 5px;
 }
