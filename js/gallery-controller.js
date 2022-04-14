@@ -18,7 +18,7 @@ function onImgSelect(imgId) {
     renderMeme()
 }
 
-function onGalleryClick() {
+function onBackToGallery() {
     document.querySelector('.main-content').hidden = false
     document.querySelector('.about').hidden = false
     document.querySelector('.canvas').hidden = true

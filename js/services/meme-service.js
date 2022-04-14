@@ -18,18 +18,16 @@ let gMeme = {
     selectedLineIdx: 0,
     lines: [
         {
-            txt: 'Destiny is all',
-            size: 20,
+            txt: 'DOM or MODEL?',
+            size: 40,
             align: 'left',
             color: 'white',
-            width: 2
         },
         {
-            txt: 'Destiny is all',
-            size: 20,
-            align: 'right',
+            txt: 'What is the difference?!',
+            size: 40,
+            align: 'center',
             color: 'white',
-            width: 2
         }
     ]
 }

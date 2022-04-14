@@ -13,14 +13,14 @@
     <header class="main-header">
         <div class="header-container header-layout flex justify-between align-center">
             <div class="logo">
-                <a href="#">
+                <a href="#" onclick="onBackToGallery()">
                     <h2>memegen</h2>
                 </a>
             </div>
             <nav class="main-nav-container">
                 <ul class="main-nav clean-list flex">
                     <li><a href="#gallery" class="flex align-center justify-center"
-                            onclick="onGalleryClick()">Gallery</a></li>
+                            onclick="onBackToGallery()">Gallery</a></li>
                     <span class="separator flex align-center justify-center">|</span>
                     <li><a href="#about" class="flex align-center justify-center">About</a></li>
                 </ul>
@@ -69,14 +69,17 @@
 
 
     <section class="canvas" hidden>
-        <div class="canvas-container flex align-center">
-            <div>
-                <canvas id="" class="my-canvas" width="300" height="300"></canvas>
+        <div class="canvas-container flex align-center justify-center">
+            <div class="canvas-board">
+                <canvas id="" class="my-canvas" width="500" height="500"></canvas>
             </div>
 
-            <div>
-                <input type="text" id="txt" name="user-text" placeholder="Input your text.."
-                    oninput="onSetLineTxt(this.value)">
+            <div class="features-container flex flex-column">
+
+                <label for="txt"></label>
+                <textarea name="user-text" id="txt" cols="25" rows="5" placeholder="Input your text here.."
+                    oninput="onSetLineTxt(this.value)"></textarea>
+
                 <label for="pick-color">
                     <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
                 </label>
@@ -93,6 +96,10 @@
                 <label for="switch-line"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
                         class="canvas-icon line"></label>
                 <input type="button" id="switch-line" name="switch-line" onclick="onSwitchLine()" hidden>
+
+                <label for="clear"><img src="img/icons/trash.png" alt="" class="canvas-icon clean"></label>
+                <input type="button" name="clear" id="clear" onclick="onClear()" hidden>
+
             </div>
         </div>
     </section>
