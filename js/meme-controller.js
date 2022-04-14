@@ -28,7 +28,7 @@ function drawImg(id, clr, size, align, txt) {
     img.src = `img/${id}.jpg`
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(txt, clr, size, align, 150, 50)
+        drawText(txt, clr, size, align, 200, 50)
         
         // drawRect(1, 1)
     }
@@ -38,6 +38,7 @@ function drawText(txt, clr, size, align, x, y) {
     gCtx.font = `${size}px Impact`
     gCtx.textBaseLine = 'middle'
     gCtx.textAlign = align
+    gCtx.lineWidth = 5
     gCtx.strokeStyle = 'black'
     gCtx.strokeText(txt, x, y)
     gCtx.fillStyle = clr

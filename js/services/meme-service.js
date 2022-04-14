@@ -20,7 +20,7 @@ let gMeme = {
         {
             txt: 'DOM or MODEL?',
             size: 40,
-            align: 'left',
+            align: 'center',
             color: 'white',
         },
         {

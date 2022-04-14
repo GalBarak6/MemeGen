@@ -97,6 +97,10 @@
     .toggle-nav-btn {
         display: none;
     }
+
+    .main-footer {
+        height: 110px;
+    }
 }
 
 

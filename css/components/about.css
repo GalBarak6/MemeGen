@@ -1,6 +1,7 @@
 .about-container {
     height: 387px;
     gap: 20px;
+    flex-direction: column;
 }
 
 .about-image {
