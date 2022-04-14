@@ -20,3 +20,14 @@
     width: 400px;
     font-size: 14px;
 }
+
+.contact {
+    height: 30px;
+    width: 30px;
+    border-radius: 6px;
+    background-color: var(--clr2);
+}
+
+.contact .contact-img {
+    filter: invert(93%) sepia(93%) saturate(26%) hue-rotate(10deg) brightness(106%) contrast(105%);
+}

@@ -18,23 +18,26 @@ function renderMeme() {
     const txt = meme.lines[gMeme.selectedLineIdx].txt
     const clr = meme.lines[gMeme.selectedLineIdx].color
     const fontSize = meme.lines[gMeme.selectedLineIdx].size
-    drawImg(imgId, clr, fontSize, txt)
+    const align = meme.lines[gMeme.selectedLineIdx].align
+    const lineWidth = meme.lines[gMeme.selectedLineIdx].width
+    drawImg(imgId, clr, fontSize, align, lineWidth, txt)
 }
 
-function drawImg(id, clr, size, txt) {
+function drawImg(id, clr, size, align, width, txt) {
     var img = new Image()
     img.src = `img/${id}.jpg`
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(txt, clr, size, 150, 50)
+        drawText(txt, clr, size, align, width, 150, 50)
     };
 }
 
-function drawText(txt, clr, size, x, y) {
+function drawText(txt, clr, size, align, width, x, y) {
     gCtx.font = `${size}px Impact`
     gCtx.textBaseLine = 'middle'
-    gCtx.textAlign = 'center'
+    gCtx.textAlign = align
     gCtx.strokeStyle = 'black'
+    gCtx.lineWidth = width
     gCtx.strokeText(txt, x, y)
     gCtx.fillStyle = clr
     gCtx.fillText(txt, x, y)
@@ -46,7 +49,6 @@ function onSetLineTxt(val) {
 }
 
 function onSetColor(val) {
-    console.log(val);
     setColor(val)
     renderMeme()
 }
@@ -59,6 +61,21 @@ function onSetFontSize(symbol) {
     // if (symbol === '-') onDown(-1)
     renderMeme()
 }
+
+
+function onSwitchLine() {
+    console.log('working!');
+    // renderMeme()
+}
+
+
+
+
+
+
+
+
+//----------------An attempt for hold mouse event-----------------
 
 
 // var timer = null

@@ -21,13 +21,15 @@ let gMeme = {
             txt: 'Destiny is all',
             size: 20,
             align: 'left',
-            color: 'white'
+            color: 'white',
+            width: 2
         },
         {
             txt: 'Destiny is all',
             size: 20,
             align: 'right',
-            color: 'white'
+            color: 'white',
+            width: 2
         }
     ]
 }
@@ -59,6 +61,11 @@ function setColor(val) {
 
 function setFontSize(indicator) {
     gMeme.lines[gMeme.selectedLineIdx].size += indicator
+}
+
+function switchLine() {
+    if(gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
+    else gMeme.selectedLineIdx = 0
 }
 
 //create img - returns object

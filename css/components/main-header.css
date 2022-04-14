@@ -1,16 +1,11 @@
 .main-header {
     background-color: var(--clr2);
-    /* min-height: 33px; */
-    box-shadow: inset 0px -2px 0 var(--clr2);
-}
-
-.header-container .main-nav {
-    gap: 10px;
+    box-shadow: inset 0 -3px 0 var(--clr2);
 }
 
 .header-container .main-nav a {
-    height: 100px;
-    width: 100px;
+    height: 70px;
+    width: 70px;
     cursor: pointer;
     transition: box-shadow .1s;
     font-size: 14px;
@@ -18,11 +13,14 @@
 
 .header-container .main-nav a:hover {
     color: var(--clr3);
-    box-shadow: inset 0px -2px 0 var(--clr3);
+    box-shadow: inset 0 -3px 0 var(--clr3);
 }
-
 
 .header-container .logo {
     font-family: Changa One;
     color: rgba(255, 255, 255);
+}
+
+.header-container .separator {
+    color: var(--clr4);
 }
