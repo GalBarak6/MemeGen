@@ -14,6 +14,7 @@
 .header-container .main-nav a:hover {
     color: var(--clr3);
     box-shadow: inset 0 -3px 0 var(--clr3);
+    font-weight: bold;
 }
 
 .header-container .logo {

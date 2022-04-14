@@ -64,7 +64,7 @@ function setFontSize(indicator) {
 }
 
 function switchLine() {
-    if(gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
+    if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
     else gMeme.selectedLineIdx = 0
 }
 

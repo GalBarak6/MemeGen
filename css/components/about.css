@@ -21,13 +21,14 @@
     font-size: 14px;
 }
 
-.contact {
+.about-content .contact {
     height: 30px;
     width: 30px;
     border-radius: 6px;
+    border: none;
     background-color: var(--clr2);
 }
 
-.contact .contact-img {
+.about-content .contact .contact-icon {
     filter: invert(93%) sepia(93%) saturate(26%) hue-rotate(10deg) brightness(106%) contrast(105%);
 }

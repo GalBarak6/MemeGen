@@ -11,6 +11,15 @@ function renderGallery() {
 }
 
 function onImgSelect(imgId) {
+    document.querySelector('.main-content').hidden = true
+    document.querySelector('.about').hidden = true
+    document.querySelector('.canvas').hidden = false
     setImg(imgId)
     renderMeme()
+}
+
+function onGalleryClick() {
+    document.querySelector('.main-content').hidden = false
+    document.querySelector('.about').hidden = false
+    document.querySelector('.canvas').hidden = true
 }

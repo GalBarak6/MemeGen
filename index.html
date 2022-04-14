@@ -13,26 +13,29 @@
     <header class="main-header">
         <div class="header-container header-layout flex justify-between align-center">
             <div class="logo">
-                <h2>memegen</h2>
+                <a href="#">
+                    <h2>memegen</h2>
+                </a>
             </div>
             <nav class="main-nav-container">
                 <ul class="main-nav clean-list flex">
-                    <li><a href="#" class="flex align-center justify-center">Gallery</a></li>
+                    <li><a href="#gallery" class="flex align-center justify-center"
+                            onclick="onGalleryClick()">Gallery</a></li>
                     <span class="separator flex align-center justify-center">|</span>
-                    <li><a href="#" class="flex align-center justify-center">About</a></li>
+                    <li><a href="#about" class="flex align-center justify-center">About</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="main-layout main-content">
+    <main class="main-layout main-content" id="gallery">
         <div class="gallery-container">
             <div class="grid-container grid"></div>
         </div>
     </main>
 
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-container  flex justify-center align-center">
             <img src="img/about.png" alt="" class="about-image">
             <div class="about-content">
@@ -44,19 +47,19 @@
 
                 <button class="contact">
                     <a href="https://www.linkedin.com/" target="_blank" class="linkdin-link">
-                        <img src="img/icons/linkedin-logo.png" alt="" class="contact-img linkdin-img">
+                        <img src="img/icons/linkedin-logo.png" alt="" class="contact-icon linkdin-img">
                     </a>
                 </button>
 
                 <button class="contact">
                     <a href="https://www.facebook.com/gal6677/" target="_blank" class="linkdin-link">
-                        <img src="img/icons/facebook-logo.png" alt="" class="contact-img linkdin-img">
+                        <img src="img/icons/facebook-logo.png" alt="" class="contact-icon facebook-icon">
                     </a>
                 </button>
 
                 <button class="contact">
                     <a href="https://github.com/GalBarak6" target="_blank" class="linkdin-link">
-                        <img src="img/icons/github-logo.png" alt="" class="contact-img linkdin-img">
+                        <img src="img/icons/github-logo.png" alt="" class="contact-icon github-icon">
                     </a>
                 </button>
 
@@ -65,31 +68,40 @@
     </section>
 
 
-    <section class="canvas-container">
-        <canvas id="" class="my-canvas" width="300" height="300"></canvas>
-        <input type="text" id="txt" name="user-text" placeholder="Input your text.." oninput="onSetLineTxt(this.value)">
+    <section class="canvas" hidden>
+        <div class="canvas-container flex align-center">
+            <div>
+                <canvas id="" class="my-canvas" width="300" height="300"></canvas>
+            </div>
 
-        <label for="pick-color">
-            <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
-        </label>
-        <input type="color" id="pick-color" name="pick-color" hidden oninput="onSetColor(this.value)">
+            <div>
+                <input type="text" id="txt" name="user-text" placeholder="Input your text.."
+                    oninput="onSetLineTxt(this.value)">
+                <label for="pick-color">
+                    <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
+                </label>
+                <input type="color" id="pick-color" name="pick-color" hidden oninput="onSetColor(this.value)">
 
-        <label for="font-size">
-            <img src="img/icons/increase font - icon.png" alt="" class="canvas-icon font"
-                onmousedown="onSetFontSize('+')">
-            <img src="img/icons/decrease font - icon.png" alt="" class="canvas-icon font"
-                onmousedown="onSetFontSize('-')">
-        </label>
-        <input type="number" id="font-size" name="font-size" hidden>
+                <label for="font-size">
+                    <img src="img/icons/increase font - icon.png" alt="" class="canvas-icon font"
+                        onmousedown="onSetFontSize('+')">
+                    <img src="img/icons/decrease font - icon.png" alt="" class="canvas-icon font"
+                        onmousedown="onSetFontSize('-')">
+                </label>
+                <input type="number" id="font-size" name="font-size" hidden>
 
-        <label for="switch-line"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
-                class="canvas-icon line"></label>
-        <input type="button" id="switch-line" name="switch-line" onclick="onSwitchLine()" hidden>
+                <label for="switch-line"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
+                        class="canvas-icon line"></label>
+                <input type="button" id="switch-line" name="switch-line" onclick="onSwitchLine()" hidden>
+            </div>
+        </div>
     </section>
 
     <footer class="main-footer flex flex-column justify-center align-center">
         <div class="logo">
-            <h2>memegen</h2>
+            <a href="#">
+                <h2>memegen</h2>
+            </a>
         </div>
         <small class="copyright">all rights reserved 2019</small>
     </footer>
