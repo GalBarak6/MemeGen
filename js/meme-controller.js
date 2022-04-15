@@ -1,40 +1,51 @@
 'use strict'
 
-
 let gElCanvas
 let gCtx
 
+//on page load -> getting canvas El, rendering gallery
 function onInit() {
     gElCanvas = document.querySelector('.my-canvas')
     gCtx = gElCanvas.getContext('2d')
 
     renderGallery()
-
 }
 
+//rendering the meme with the clicked img + line settings
 function renderMeme() {
+    gCtx.beginPath()
     const meme = getMeme()
     const imgId = meme.selectedImgId
-    const lineId = meme.selectedLineIdx
-    const txt = meme.lines[lineId].txt
-    const clr = meme.lines[lineId].color
-    const fontSize = meme.lines[lineId].size
-    const align = meme.lines[lineId].align
-    drawImg(imgId, clr, fontSize, align, txt)
+    const lineIdx = meme.selectedLineIdx
+    // const txt = meme.lines[lineId].txt
+    // const clr = meme.lines[lineId].color
+    // const fontSize = meme.lines[lineId].size
+    // const align = meme.lines[lineId].align
+    // const x = meme.lines[lineId].x
+    // const y = meme.lines[lineId].y
+    drawImg(imgId, lineIdx)
 }
 
-function drawImg(id, clr, size, align, txt) {
+//drawing the img on the canvas board
+function drawImg(id, lineIdx) {
+    const meme = getMeme()
+    const lines = meme.lines
     var img = new Image()
     img.src = `img/${id}.jpg`
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        drawText(txt, clr, size, align, 200, 50)
-        drawText(txt, clr, size, align, 200, 200)
-        
-        // drawRect(1, 1)
-    }
+            lines.forEach(line => {
+                drawText(line.txt, line.color, line.size, line.align, line.x, line.y)
+            })
+            if(lineIdx === 0) {
+                drawRect(1, 1)
+            } else {
+                drawRect(1,295)
+            }
+        }
 }
 
+//drawing the txt on the canvas board
 function drawText(txt, clr, size, align, x, y) {
     gCtx.font = `${size}px Impact`
     gCtx.textBaseLine = 'middle'
@@ -46,16 +57,19 @@ function drawText(txt, clr, size, align, x, y) {
     gCtx.fillText(txt, x, y)
 }
 
+//when user writes in the textarea -> every input operates this function to change the txt on service
 function onSetLineTxt(val) {
     setLineTxt(val)
     renderMeme()
 }
 
+//when color btn clicked -> sending to service the clr
 function onSetColor(val) {
     setColor(val)
     renderMeme()
 }
 
+//when font size clicked(+ or -) checking the symbol they sent, then sending to service with the right symbol
 function onSetFontSize(symbol) {
     // addListeners()
     if (symbol === '+') setFontSize(+1)
@@ -65,32 +79,29 @@ function onSetFontSize(symbol) {
     renderMeme()
 }
 
-
+//when switch line icon pressed -> cleaning placeholder and going to service for idx change
 function onSwitchLine() {
+    document.querySelector('[name=user-text]').value = ''
     switchLine()
     renderMeme()
 }
 
-
+//drawing a Rect when a line is focused
 function drawRect(x, y) {
     gCtx.lineWidth = 5
-    gCtx.rect(x, y, 497, 150)
+    gCtx.rect(x, y, 397, 100)
     gCtx.strokeStyle = 'black'
     gCtx.stroke()
 }
 
+//Trash icon -> clearing the txt, back to default clr, clearing placeholder
 function onClear() {
     const meme = getMeme()
+    meme.lines[meme.selectedLineIdx].color = 'white'
     meme.lines[meme.selectedLineIdx].txt = ''
     document.querySelector('[name=user-text]').value = ''
     renderMeme()
 }
-
-
-
-
-
-
 
 
 

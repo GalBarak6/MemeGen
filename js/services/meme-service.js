@@ -1,5 +1,23 @@
 'use strict'
 
+const gDefaultLine1 = {
+    txt: 'DOM or MODEL?',
+    size: 40,
+    align: 'center',
+    color: 'white',
+    x: 200,
+    y: 50,
+}
+
+const gDefaultLine2 = {
+    txt: 'NEITHER',
+    size: 40,
+    align: 'center',
+    color: 'white',
+    x: 200,
+    y: 350
+}
+
 
 let gImgs = [
     createImg(1, 'img/1.jpg', ['funny', 'politics']),
@@ -22,12 +40,16 @@ let gMeme = {
             size: 40,
             align: 'center',
             color: 'white',
+            x: 200,
+            y: 50,
         },
         {
             txt: 'NEITHER',
             size: 40,
-            align: 'left',
+            align: 'center',
             color: 'white',
+            x: 200,
+            y: 350
         }
     ]
 }
@@ -57,14 +79,23 @@ function setColor(val) {
     gMeme.lines[gMeme.selectedLineIdx].color = val
 }
 
+//setting the font size in the model
 function setFontSize(indicator) {
     gMeme.lines[gMeme.selectedLineIdx].size += indicator
 }
 
+//switch the line which we write in + focusing it with a drawRect
 function switchLine() {
     if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
     else gMeme.selectedLineIdx = 0
-    console.log(gMeme.selectedLineIdx);
+}
+
+//set back to default settings both lines
+function SetDefaultLine() {
+    let default1 = Object.assign({}, gDefaultLine1)
+    let default2 = Object.assign({}, gDefaultLine2)
+    gMeme.lines[0] = default1
+    gMeme.lines[1] = default2
 }
 
 //create img - returns object
@@ -76,3 +107,5 @@ function createImg(id, url, keywords) {
     }
     return img
 }
+
+
