@@ -36,7 +36,7 @@
     </main>
 
 
-    <section class="about">
+    <section class="about" id="about">
         <div class="about-container flex justify-center align-center">
             <img src="img/about.png" alt="" class="about-image">
             <div class="about-content">
@@ -71,6 +71,7 @@
 
     <section class="canvas" hidden>
         <div class="canvas-container flex align-center justify-center">
+
             <div class="canvas-board">
                 <canvas id="" class="my-canvas" width="400" height="400"></canvas>
             </div>
@@ -78,7 +79,7 @@
             <div class="features-container flex flex-column">
 
                 <div>
-                    <label for="txt"></label>
+                    <!-- <label for="txt"></label> -->
                     <textarea name="user-text" id="txt" placeholder="Input your text here.."
                         oninput="onSetLineTxt(this.value)"></textarea>
                 </div>
@@ -95,13 +96,14 @@
                             onmousedown="onSetFontSize('-')" class="canvas-icon"></button>
                 </div>
 
+                <div>
+                    <button class="icon-btn"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                            alt="" onclick="onSwitchLine()" class="canvas-icon"></button>
 
-                <button class="icon-btn"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png" alt=""
-                        onclick="onSwitchLine()" class="canvas-icon"></button>
 
-
-                <button class="icon-btn"><img src="img/icons/trash.png" alt="" onclick="onClear()"
-                        class="canvas-icon"></button>
+                    <button class="icon-btn"><img src="img/icons/trash.png" alt="" onclick="onClear()"
+                            class="canvas-icon"></button>
+                </div>
 
             </div>
         </div>

@@ -84,9 +84,9 @@
     }
 
     .features-container {
-        align-self: flex-start;
-        padding-top: 55px;
-        gap: 10px;
+        gap: 15px;
+        align-items: center;
+        height: 500px;
     }
 
     #txt {

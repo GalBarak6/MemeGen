@@ -29,6 +29,7 @@ function drawImg(id, clr, size, align, txt) {
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
         drawText(txt, clr, size, align, 200, 50)
+        drawText(txt, clr, size, align, 200, 200)
         
         // drawRect(1, 1)
     }

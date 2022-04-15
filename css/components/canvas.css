@@ -7,11 +7,15 @@
     padding-top: 20px;
 }
 
-.my-canvas {
+.canvas-board .my-canvas {
     margin: 0 auto;
 }
 
-.canvas-icon {
+.canvas-container .features-container {
+    align-items: center;
+}
+
+.features-container .canvas-icon {
     height: 30px;
     width: 30px;
     background-color: var(--clr1);
@@ -19,14 +23,14 @@
     padding: 5px;
 }
 
-.icon-btn {
+.features-container .icon-btn {
     border: none;
     align-self: flex-start;
     padding: 0;
     margin: 0;
 }
 
-.color-label {
+.features-container .color-label {
     width: 0;
 }
 
