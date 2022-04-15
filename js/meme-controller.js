@@ -1,10 +1,12 @@
 'use strict'
 
+let gIsLineAdded = false
 let gElCanvas
 let gCtx
 
 //on page load -> getting canvas El, rendering gallery
 function onInit() {
+    gIsLineAdded = false
     gElCanvas = document.querySelector('.my-canvas')
     gCtx = gElCanvas.getContext('2d')
 
@@ -39,11 +41,14 @@ function drawImg(id, lineIdx) {
             })
             if(lineIdx === 0) {
                 drawRect(1, 1)
-            } else {
+            } else if(lineIdx === 1) {
                 drawRect(1,295)
+            } else if(gIsLineAdded && lineIdx === 2) {
+                drawRect(1,130)
             }
-        }
+    }  
 }
+
 
 //drawing the txt on the canvas board
 function drawText(txt, clr, size, align, x, y) {
@@ -103,6 +108,27 @@ function onClear() {
     renderMeme()
 }
 
+//all 3 align btns operates this func -> sending the align direction to service
+function onAlignTxt(direction) {
+    alignTxt(direction)
+    renderMeme()
+}
+
+// + icon clicked -> changing boolean var to true and adding line in service model
+function onAddLine() {
+    gIsLineAdded = true
+    addLine()
+    renderMeme()
+}
+
+//back to default - as it appears on init(without third line) and with focus on first line
+function onDefaultLine() {
+    const meme = getMeme()
+    gIsLineAdded = false
+    meme.selectedLineIdx = 0
+    document.querySelector('[name=user-text]').value = ''
+    renderMeme()
+}
 
 
 //----------------An attempt for hold mouse event-----------------

@@ -6,7 +6,6 @@
 .header-container .main-nav a {
     height: 45px;
     width: 45px;
-    cursor: pointer;
     transition: box-shadow .1s;
     font-size: 10px;
 }

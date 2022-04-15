@@ -18,6 +18,15 @@ const gDefaultLine2 = {
     y: 350
 }
 
+const gDefaultLine3 = {
+    txt: 'NOT SO SURE',
+    size: 40,
+    align: 'center',
+    color: 'white',
+    x: 200,
+    y: 200
+}
+
 
 let gImgs = [
     createImg(1, 'img/1.jpg', ['funny', 'politics']),
@@ -86,16 +95,38 @@ function setFontSize(indicator) {
 
 //switch the line which we write in + focusing it with a drawRect
 function switchLine() {
-    if (gMeme.selectedLineIdx === 0) gMeme.selectedLineIdx = 1
-    else gMeme.selectedLineIdx = 0
+    switch (gMeme.selectedLineIdx) {
+        case 2:
+            gMeme.selectedLineIdx = 0
+            break
+        case 0:
+            gMeme.selectedLineIdx = 1
+            break
+        case 1:
+            if (gIsLineAdded) gMeme.selectedLineIdx = 2
+            else gMeme.selectedLineIdx = 0
+            break
+    }
 }
 
-//set back to default settings both lines
+//set back to default settings both lines + splicing third line
 function SetDefaultLine() {
     let default1 = Object.assign({}, gDefaultLine1)
     let default2 = Object.assign({}, gDefaultLine2)
     gMeme.lines[0] = default1
     gMeme.lines[1] = default2
+    gMeme.lines.splice(2, 1)
+}
+
+//changes align direction in model by the direction that was sent
+function alignTxt(direction) {
+    gMeme.lines[gMeme.selectedLineIdx].align = direction
+}
+
+//updating model and pushing the third line
+function addLine() {
+    let default3 = Object.assign({}, gDefaultLine3)
+    gMeme.lines.push(default3)
 }
 
 //create img - returns object

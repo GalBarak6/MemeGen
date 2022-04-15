@@ -23,7 +23,7 @@ function onBackToGallery() {
     document.querySelector('.main-content').hidden = false
     document.querySelector('.about').hidden = false
     document.querySelector('.canvas').hidden = true
-    document.querySelector('[name=user-text]').value = ''
+    onDefaultLine()
     SetDefaultLine()
 }
 

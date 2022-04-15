@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sprint2</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body onload="onInit()">
@@ -85,24 +85,32 @@
                 </div>
 
                 <div>
-                    <label for="pick-color" class="color-label">
-                        <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
-                    </label>
-                    <input type="color" id="pick-color" name="pick-color" oninput="onSetColor(this.value)" hidden>
+                    <button class="icon-btn"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
+                            alt="" onclick="onSwitchLine()" class="canvas-icon"></button>
+                    <button class="icon-btn"><img src="img/icons/add.png" alt="" onclick="onAddLine()"
+                            class="canvas-icon"></button>
+                    <button class="icon-btn"><img src="img/icons/trash.png" alt="" onclick="onClear()"
+                            class="canvas-icon"></button>
+                </div>
 
+                <div>
                     <button class="icon-btn"><img src="img/icons/increase font - icon.png" alt=""
                             onmousedown="onSetFontSize('+')" class="canvas-icon"></button>
                     <button class="icon-btn"><img src="img/icons/decrease font - icon.png" alt=""
                             onmousedown="onSetFontSize('-')" class="canvas-icon"></button>
+                    <button class="icon-btn"><img src="img/icons/align-to-left.png" alt="" class="canvas-icon"
+                            onclick="onAlignTxt('left')"></button>
+                    <button class="icon-btn"><img src="img/icons/center-text-alignment.png" alt="" class="canvas-icon"
+                            onclick="onAlignTxt('center')"></button>
+                    <button class="icon-btn"><img src="img/icons/align-to-right.png" alt="" class="canvas-icon"
+                            onclick="onAlignTxt('right')"></button>
                 </div>
 
                 <div>
-                    <button class="icon-btn"><img src="img/icons/up-and-down-opposite-double-arrows-side-by-side.png"
-                            alt="" onclick="onSwitchLine()" class="canvas-icon"></button>
-
-
-                    <button class="icon-btn"><img src="img/icons/trash.png" alt="" onclick="onClear()"
-                            class="canvas-icon"></button>
+                    <label for="pick-color" class="color-label">
+                        <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
+                    </label>
+                    <input type="color" id="pick-color" name="pick-color" oninput="onSetColor(this.value)" hidden>
                 </div>
 
             </div>
