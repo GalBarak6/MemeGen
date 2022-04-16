@@ -29,8 +29,18 @@
         </div>
     </header>
 
-    <div class="flexible-option">
-        <button onclick="onRandomMeme()">I'm Flexible</button>
+    <div>
+        <div class="flexible-option">
+            <button onclick="onRandomMeme()">I'm Flexible</button>
+        </div>
+        <div class="filter">
+            <select name="filter-btn" class="filter-btn" onchange="onSetFilter(this.value)">
+                <option value="Default" hidden>Select By Keyword</option>
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+                <option value="funny">Funny</option>
+            </select>
+        </div>
     </div>
 
     <main class="main-layout main-content" id="gallery">

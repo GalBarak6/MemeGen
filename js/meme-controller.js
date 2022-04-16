@@ -152,12 +152,19 @@ function onDownloadCanvas(elLink) {
     elLink.download = 'my-meme';
 }
 
+//when im flexible clicked -> sending to service to randomize settings
 function onRandomMeme() {
     randomMeme()
     document.querySelector('.main-content').hidden = true
     document.querySelector('.about').hidden = true
     document.querySelector('.canvas').hidden = false
     renderMeme()
+}
+
+//setting the selected filter, sending to service and rendering imgs by it
+function onSetFilter(filterBy) {
+    setFilter(filterBy)
+    renderGallery()
 }
 
 //----------------An attempt for hold mouse event-----------------

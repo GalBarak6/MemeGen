@@ -1,0 +1,13 @@
+.filter {
+    background-color: var(--clr4);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.filter .filter-btn {
+    border: none;
+    border-radius: 30px;
+    padding: 8px 15px;
+    color: var(--clr1);
+    background-color: rgb(70, 114, 180);
+}

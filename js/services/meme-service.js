@@ -1,5 +1,7 @@
 'use strict'
 
+let gFilterBy = ''
+
 const gTxts = [
     'I hope we didnt need that', 'Here we go again', 'You win some you lose some', 'Take it or leave it', 'Better than nothing',
     'My time has come', 'Better you than me', 'Fight me!', 'Bring it on!'
@@ -78,9 +80,22 @@ let gMeme = {
     ]
 }
 
-//returns the global variable of imgs
+//returns the global variable of imgs or the filtered imgs
 function getImgs() {
-    return gImgs
+    if (!gFilterBy) return gImgs
+    const imgs = gImgs.filter(img => {
+        return img.keywords.includes("funny") && gFilterBy === 'funny'
+            || img.keywords.includes("dogs") && gFilterBy === 'dogs'
+            || img.keywords.includes("babies") && gFilterBy === 'babies'
+            || img.keywords.includes("politics") && gFilterBy === 'politics'
+            || img.keywords.includes("cats") && gFilterBy === 'cats'
+            || img.keywords.includes("shock") && gFilterBy === 'shock'
+            || img.keywords.includes("happy") && gFilterBy === 'happy'
+            || img.keywords.includes("laugh") && gFilterBy === 'laugh'
+            || img.keywords.includes("crazy") && gFilterBy === 'crazy'
+    })
+    return imgs
+
 }
 
 //returns the global variable of meme
@@ -154,12 +169,18 @@ function setStroke(clr) {
     gMeme.lines[gMeme.selectedLineIdx].strokeClr = clr
 }
 
+//randomizing all the settings if flexible option was sent
 function randomMeme() {
     gMeme.selectedImgId = getRandomIntInclusive(0, gImgs.length - 1)
     gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].txt = gTxts[getRandomIntInclusive(0, gTxts.length - 1)]
     gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].color = getRandomColor()
     gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].strokeClr = getRandomColor()
     gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].size = getRandomIntInclusive(20, 40)
+}
+
+//receiving filter keyword and changing global var
+function setFilter(filterBy) {
+    gFilterBy = filterBy
 }
 
 //create img - returns object
