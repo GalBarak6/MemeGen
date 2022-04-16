@@ -1,5 +1,10 @@
 'use strict'
 
+const gTxts = [
+    'I hope we didnt need that', 'Here we go again', 'You win some you lose some', 'Take it or leave it', 'Better than nothing',
+    'My time has come', 'Better you than me', 'Fight me!', 'Bring it on!'
+]
+
 const gDefaultLine1 = {
     txt: 'DOM or MODEL?',
     size: 40,
@@ -147,6 +152,14 @@ function fontPick(font) {
 //receiving stroke clr from controller and changing model clr
 function setStroke(clr) {
     gMeme.lines[gMeme.selectedLineIdx].strokeClr = clr
+}
+
+function randomMeme() {
+    gMeme.selectedImgId = getRandomIntInclusive(0, gImgs.length - 1)
+    gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].txt = gTxts[getRandomIntInclusive(0, gTxts.length - 1)]
+    gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].color = getRandomColor()
+    gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].strokeClr = getRandomColor()
+    gMeme.lines[getRandomIntInclusive(0, gMeme.lines.length - 1)].size = getRandomIntInclusive(20, 40)
 }
 
 //create img - returns object

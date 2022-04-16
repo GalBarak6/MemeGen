@@ -14,6 +14,7 @@
 /* COMPONENTS */
 
 @import 'components/main-header.css';
+@import 'components/flexible.css';
 @import 'components/gallery.css';
 @import 'components/about.css';
 @import 'components/canvas.css';
@@ -22,5 +23,3 @@
 /* MQ */
 
 @import 'mq/mq.css';
-
-

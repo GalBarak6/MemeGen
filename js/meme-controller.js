@@ -152,7 +152,13 @@ function onDownloadCanvas(elLink) {
     elLink.download = 'my-meme';
 }
 
-
+function onRandomMeme() {
+    randomMeme()
+    document.querySelector('.main-content').hidden = true
+    document.querySelector('.about').hidden = true
+    document.querySelector('.canvas').hidden = false
+    renderMeme()
+}
 
 //----------------An attempt for hold mouse event-----------------
 

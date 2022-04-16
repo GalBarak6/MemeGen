@@ -56,6 +56,10 @@
         color: var(--clr4);
     }
 
+    .flexible-option {
+        padding-top: 15px;
+    }
+
     .main-layout {
         padding-left: 12px;
         padding-right: 12px;

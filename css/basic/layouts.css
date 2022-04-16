@@ -6,12 +6,13 @@
     padding-right: 6px;
 }
 
+
 /* MAIN(GALLERY) LAYOUT */
 
 .main-layout {
     margin: 0 auto;
     padding-left: 6px;
     padding-right: 6px;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 5px;
 }
