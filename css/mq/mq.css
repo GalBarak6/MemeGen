@@ -1,6 +1,6 @@
 /* MOBILE ONLY */
 
-@media (max-width: 730px) {
+@media (max-width: 660px) {
     .main-header {
         position: fixed;
         width: 100%;
@@ -40,7 +40,7 @@
 
 /* SMALL */
 
-@media (min-width: 730px) {
+@media (min-width: 660px) {
     .header-layout {
         padding-left: 12px;
         padding-right: 12px;

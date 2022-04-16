@@ -1,7 +1,9 @@
 .about-container {
-    height: 387px;
-    gap: 20px;
+    min-height: 387px;
+    gap: 10px;
     flex-direction: column;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 .about-container .about-image {
@@ -18,8 +20,8 @@
 
 .about-container .about-content .about-text {
     color: var(--clr6);
-    width: 400px;
-    font-size: 14px;
+    max-width: 300px;
+    font-size: 13px;
 }
 
 .about-container .about-content .contact {

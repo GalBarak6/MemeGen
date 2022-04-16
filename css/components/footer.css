@@ -1,6 +1,6 @@
 .main-footer {
     background-color: var(--clr2);
-    height: 55px;
+    min-height: 55px;
 }
 
 .main-footer .logo {
