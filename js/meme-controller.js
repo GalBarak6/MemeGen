@@ -37,7 +37,7 @@ function drawImg(id, lineIdx) {
     img.onload = function () {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
             lines.forEach(line => {
-                drawText(line.txt, line.color, line.size, line.align, line.x, line.y)
+                drawText(line.txt, line.color, line.size, line.align, line.x, line.y, line.font, line.strokeClr)
             })
             if(lineIdx === 0) {
                 drawRect(1, 1)
@@ -51,12 +51,12 @@ function drawImg(id, lineIdx) {
 
 
 //drawing the txt on the canvas board
-function drawText(txt, clr, size, align, x, y) {
-    gCtx.font = `${size}px Impact`
+function drawText(txt, clr, size, align, x, y, font, strokeClr) {
+    gCtx.font = `${size}px ${font}`
     gCtx.textBaseLine = 'middle'
     gCtx.textAlign = align
-    gCtx.lineWidth = 5
-    gCtx.strokeStyle = 'black'
+    gCtx.lineWidth = 4
+    gCtx.strokeStyle = `${strokeClr}`
     gCtx.strokeText(txt, x, y)
     gCtx.fillStyle = clr
     gCtx.fillText(txt, x, y)
@@ -116,6 +116,7 @@ function onAlignTxt(direction) {
 
 // + icon clicked -> changing boolean var to true and adding line in service model
 function onAddLine() {
+    if(gIsLineAdded) return
     gIsLineAdded = true
     addLine()
     renderMeme()
@@ -129,6 +130,28 @@ function onDefaultLine() {
     document.querySelector('[name=user-text]').value = ''
     renderMeme()
 }
+
+//when font type clicked - sending the picked font to service
+function onFontPick(font) {
+    console.log(font);
+    fontPick(font)
+    renderMeme()
+}
+
+//when stroke color clicked - sending the picked clr to service
+function onSetStroke(clr) {
+    console.log(clr);
+    setStroke(clr)
+    renderMeme()
+}
+
+//when download btn clicked - sending the url to the href html
+function onDownloadCanvas(elLink) {
+    const data = gElCanvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'my-meme';
+}
+
 
 
 //----------------An attempt for hold mouse event-----------------

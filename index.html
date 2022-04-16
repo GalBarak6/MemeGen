@@ -73,7 +73,7 @@
         <div class="canvas-container flex align-center justify-center">
 
             <div class="canvas-board">
-                <canvas id="" class="my-canvas" width="400" height="400"></canvas>
+                <canvas id="my-canvas" class="my-canvas" width="400" height="400"></canvas>
             </div>
 
             <div class="features-container flex flex-column">
@@ -106,11 +106,30 @@
                             onclick="onAlignTxt('right')"></button>
                 </div>
 
-                <div>
+                <div class="third-line-features flex">
+
+                    <select name="font-pick" id="font-pick" class="font-pick" onchange="onFontPick(this.value)">
+                        <option value="impact">IMPACT</option>
+                        <option value="arial">ARIAL</option>
+                        <option value="david">DAVID</option>
+                    </select>
+
+                    <label for="pick-stroke-clr" class="stroke-label">
+                        <img src="img/icons/text stroke.png" alt="" class="canvas-icon">
+                    </label>
+                    <input type="color" id="pick-stroke-clr" name="pick-stroke-clr" oninput="onSetStroke(this.value)"
+                        hidden>
+
                     <label for="pick-color" class="color-label">
                         <img src="img/icons/paint-board-and-brush.png" alt="" class="canvas-icon">
                     </label>
                     <input type="color" id="pick-color" name="pick-color" oninput="onSetColor(this.value)" hidden>
+
+                </div>
+
+                <div>
+                    <button class="icon-btn download"><a href="#" onclick="onDownloadCanvas(this)"
+                            download="myimage">download</a></button>
                 </div>
 
             </div>

@@ -7,6 +7,8 @@ const gDefaultLine1 = {
     color: 'white',
     x: 200,
     y: 50,
+    font: 'impact',
+    strokeClr: 'black'
 }
 
 const gDefaultLine2 = {
@@ -15,7 +17,9 @@ const gDefaultLine2 = {
     align: 'center',
     color: 'white',
     x: 200,
-    y: 350
+    y: 350,
+    font: 'impact',
+    strokeClr: 'black'
 }
 
 const gDefaultLine3 = {
@@ -24,7 +28,9 @@ const gDefaultLine3 = {
     align: 'center',
     color: 'white',
     x: 200,
-    y: 200
+    y: 200,
+    font: 'impact',
+    strokeClr: 'black'
 }
 
 
@@ -51,6 +57,8 @@ let gMeme = {
             color: 'white',
             x: 200,
             y: 50,
+            font: 'impact',
+            strokeClr: 'black'
         },
         {
             txt: 'NEITHER',
@@ -58,7 +66,9 @@ let gMeme = {
             align: 'center',
             color: 'white',
             x: 200,
-            y: 350
+            y: 350,
+            font: 'impact',
+            strokeClr: 'black'
         }
     ]
 }
@@ -127,6 +137,16 @@ function alignTxt(direction) {
 function addLine() {
     let default3 = Object.assign({}, gDefaultLine3)
     gMeme.lines.push(default3)
+}
+
+//receiving font from controller and changing model font
+function fontPick(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+
+//receiving stroke clr from controller and changing model clr
+function setStroke(clr) {
+    gMeme.lines[gMeme.selectedLineIdx].strokeClr = clr
 }
 
 //create img - returns object

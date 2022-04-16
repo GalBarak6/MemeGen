@@ -34,6 +34,27 @@
     width: 0;
 }
 
+.features-container .download {
+    background-color: var(--clr2);
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: var(--clr1);
+    font-family: Montserrat;
+}
+
+.features-container .third-line-features {
+    gap: 10px;
+    justify-items: flex-start;
+    width: 12em;
+}
+
+.features-container .font-pick {
+    font-family: Montserrat;
+    height: 30px;
+    width: 110px;
+    border: none;
+}
+
 #txt {
     width: 20em;
     height: 2em;
