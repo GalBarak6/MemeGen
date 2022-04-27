@@ -3,9 +3,11 @@
 let gIsLineAdded = false
 let gElCanvas
 let gCtx
+// let gIsDownload = false
 
 //on page load -> getting canvas El, rendering gallery
 function onInit() {
+    // gIsDownload = false
     gIsLineAdded = false
     gElCanvas = document.querySelector('.my-canvas')
     gCtx = gElCanvas.getContext('2d')
@@ -39,6 +41,7 @@ function drawImg(id, lineIdx) {
             lines.forEach(line => {
                 drawText(line.txt, line.color, line.size, line.align, line.x, line.y, line.font, line.strokeClr)
             })
+            // if(gIsDownload) return
             if(lineIdx === 0) {
                 drawRect(1, 1)
             } else if(lineIdx === 1) {
@@ -147,9 +150,12 @@ function onSetStroke(clr) {
 
 //when download btn clicked - sending the url to the href html
 function onDownloadCanvas(elLink) {
+    // gIsDownload = true
+    // renderMeme()
     const data = gElCanvas.toDataURL();
     elLink.href = data;
     elLink.download = 'my-meme';
+    // gIsDownload = false
 }
 
 //when im flexible clicked -> sending to service to randomize settings
